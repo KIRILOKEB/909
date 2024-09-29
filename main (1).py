@@ -33,7 +33,7 @@ class EditorWindow(QMainWindow):
         'text':'',
         'taps': []
         }
-        self.ui.listWidget.addItem(note_name)
+        self.ui.listWidget.addItem(note_name)#jmjmgjmhn
     def connects(self):
         self.ui.pushButton_3.clicked.connect(self.create_note)
         self.ui.pushButton_2.clicked.connect(self.delete_note)
