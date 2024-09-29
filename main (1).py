@@ -36,8 +36,17 @@ class EditorWindow(QMainWindow):
         self.ui.listWidget.addItem(note_name)
     def connects(self):
         self.ui.pushButton_3.clicked.connect(self.create_note)
+        self.ui.pushButton_2.clicked.connect(self.delete_note)
+
     def delete_note(self):
-        pass
+        note_selected = self.ui.listWidget.selectedItems()
+        if note_selected:
+            note_name = note_selected[0].text()
+            del self.data[note_name]
+            self.ui.listWidget.clear()
+            self.ui.listWidget.addItems(self.data)
+
+
     
     def save_note(self):
         pass
